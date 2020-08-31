@@ -1,14 +1,29 @@
 import React, { FC } from 'react';
-import { Item, Inner, Container, Title, SubTitle } from './styles/jumbotron';
+import {
+  Item,
+  Inner,
+  Container,
+  Title,
+  SubTitle,
+  Image,
+  Pane,
+} from './styles/jumbotron';
+
+interface IRestProps {
+  [rest: string]: any;
+}
 
 interface IComposition {
-  Container: FC;
-  Title: FC;
-  SubTitle: FC;
+  Container: FC<IRestProps>;
+  Title: FC<IRestProps>;
+  SubTitle: FC<IRestProps>;
+  Image: FC<IRestProps>;
+  Pane: FC<IRestProps>;
 }
 
 interface IProps {
   direction: string;
+  [rest: string]: any;
 }
 
 export const Jumbotron: FC<IProps> & IComposition = ({
@@ -33,4 +48,12 @@ Jumbotron.Title = ({ children, ...restProps }) => {
 
 Jumbotron.SubTitle = ({ children, ...restProps }) => {
   return <SubTitle {...restProps}>{children}</SubTitle>;
+};
+
+Jumbotron.Image = ({ children, ...restProps }) => {
+  return <Image {...restProps} />;
+};
+
+Jumbotron.Pane = ({ children, ...restProps }) => {
+  return <Pane {...restProps}>{children}</Pane>;
 };

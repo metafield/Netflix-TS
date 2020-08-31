@@ -4,7 +4,23 @@ type Props = {
   direction: string;
 };
 
-export const Container = styled.section``;
+export const Item = styled.div`
+  display: flex;
+  border-bottom: 8px solid #222;
+  padding: 50px 5%;
+  color: white;
+  overflow: hidden;
+`;
+
+export const Container = styled.section`
+  background-color: black;
+
+  @media (max-width: 1000px) {
+    ${Item}:last-of-type h2 {
+      margin-bottom: 3rem;
+    }
+  }
+`;
 
 export const Inner = styled.div<Props>`
   display: flex;
@@ -20,8 +36,14 @@ export const Inner = styled.div<Props>`
   }
 `;
 
-export const Item = styled.div`
-  display: flex;
+export const Pane = styled.div`
+  width: 50%;
+
+  @media (max-width: 1000px) {
+    width: 100%;
+    padding: 0 45px;
+    text-align: center;
+  }
 `;
 
 export const Title = styled.h1`
@@ -37,7 +59,6 @@ export const SubTitle = styled.h2`
 
   @media (max-width: 600px) {
     font-size: 1.2rem;
-    color: red;
   }
 `;
 
