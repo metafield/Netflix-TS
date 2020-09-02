@@ -6,6 +6,7 @@ import {
   Title,
   Header,
   Body,
+  Frame,
 } from './styles/accordion';
 
 interface IRestProps {
@@ -19,6 +20,7 @@ interface IComposition {
   Title: FC<IRestProps>;
   Body: FC<IRestProps>;
   Header: FC<IRestProps>;
+  Frame: FC<IRestProps>;
 }
 
 export const Accordion: FC<IRestProps> & IComposition = ({
@@ -42,6 +44,10 @@ Accordion.Title = ({ children, ...restProps }) => {
 
 Accordion.Inner = ({ children, ...restProps }) => {
   return <Inner {...restProps}>{children}</Inner>;
+};
+
+Accordion.Frame = ({ children, ...restProps }) => {
+  return <Frame {...restProps}>{children}</Frame>;
 };
 
 Accordion.Item = ({ children, ...restProps }) => {
