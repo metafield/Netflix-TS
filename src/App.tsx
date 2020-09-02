@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import { Route } from 'react-router-dom';
-import { Routes } from './enums/routes';
+import { Routes } from './enums/Routes';
 import Home from './pages/home';
 
 function App() {
