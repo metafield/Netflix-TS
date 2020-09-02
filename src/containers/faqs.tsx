@@ -1,5 +1,5 @@
 import React from 'react';
-import { Accordion } from '../components';
+import { Accordion, OptForm } from '../components';
 import faqsData from '../fixtures/faqs.json';
 
 export const FaqsContainer = () => {
@@ -14,6 +14,10 @@ export const FaqsContainer = () => {
           </Accordion.Item>
         ))}
       </Accordion.Frame>
+
+      <OptForm>
+        <OptForm.Input placeholder="Email Address" />
+      </OptForm>
     </Accordion>
   );
 };
