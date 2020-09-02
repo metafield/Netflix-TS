@@ -1,22 +1,23 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import { Route } from 'react-router-dom';
+import { Routes } from './enums/routes';
 import Home from './pages/home';
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/signin">
+        <Route path={Routes.SIGN_IN}>
           <p>I will be the sign in page</p>
         </Route>
-        <Route path="/signup">
+        <Route path={Routes.SIGN_UP}>
           <p>I will be the sign up page</p>
         </Route>
-        <Route path="/browse">
+        <Route path={Routes.BROWSE}>
           <p>I will be the browse page</p>
         </Route>
-        <Route path="/">
+        <Route path={Routes.HOME}>
           <Home />
         </Route>
       </Switch>
