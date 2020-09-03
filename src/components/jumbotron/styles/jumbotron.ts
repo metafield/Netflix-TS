@@ -38,6 +38,7 @@ export const Inner = styled.div<Props>`
 
 export const Pane = styled.div`
   width: 50%;
+  padding: 2em;
 
   @media (max-width: 1000px) {
     width: 100%;
